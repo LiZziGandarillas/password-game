@@ -1,0 +1,71 @@
+@import '../../styles/variables';
+
+.rule-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: $border-radius;
+  background-color: $light-bg;
+  transition: background-color 0.3s ease;
+
+  &.valid {
+    background-color: rgba($success-color, 0.1);
+  }
+
+  &.invalid {
+    background-color: rgba($error-color, 0.1);
+  }
+
+  .rule-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    color: white;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+
+  .rule-content {
+    flex-grow: 1;
+
+    .rule-description {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .rule-error-message {
+      color: $error-color;
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+  }
+
+  .rule-status {
+    margin-left: 10px;
+
+    .status-icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+      border-radius: 50%;
+
+      &.valid {
+        background-color: $success-color;
+        color: white;
+      }
+
+      &.invalid {
+        background-color: $error-color;
+        color: white;
+      }
+    }
+  }
+}

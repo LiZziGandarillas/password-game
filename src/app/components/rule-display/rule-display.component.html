@@ -1,0 +1,13 @@
+<div class="rule-item" [ngClass]="statusClass">
+  <div class="rule-number">{{rule.id}}</div>
+  <div class="rule-content">
+    <p class="rule-description">{{rule.description}}</p>
+    <p *ngIf="validationResult && !validationResult.isValid" class="rule-error-message">
+      {{validationResult.message}}
+    </p>
+  </div>
+  <div class="rule-status">
+    <span *ngIf="validationResult?.isValid" class="status-icon valid">✓</span>
+    <span *ngIf="validationResult && !validationResult.isValid" class="status-icon invalid">✗</span>
+  </div>
+</div>
